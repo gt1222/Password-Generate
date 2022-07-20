@@ -16,7 +16,8 @@ generateBtn.addEventListener("click", writePassword);
 
 
 // declare function generatePassword()
-function generatePassword();
+function generatePassword() {
+};
 
 // variables holding the different characters
 var uppercase = ["A", "B", "C"]
@@ -29,46 +30,41 @@ var selectedCharacters = []
 
 // I need to use prompt() to gather password criteria
 // var passwordLength = prompt("How many characters would you like in your password?")
-var passwordLength = prompt("How many characters would you like in your password between 8-128?");
+var passwordLength = window.prompt("How many characters would you like in your password? Choose between 8-128 characters");
 
 // if password length is less than 8 stop function
-if (passwordLength<8) {
-
+if (passwordLength < 8) {
+  window.alert("Your password is not between 8-128 characters. Please try again");
+  var passwordLength = window.prompt("How many characters would you like in your password? Choose between 8-128 characters");
 }
 
 // if password length is greater than 128 stop function
-if (passwordLength>128) {
-
+if (passwordLength > 128) {
+  window.alert("Your password is not between 8-128 characters. Please try again");
+  var passwordLength = window.prompt("How many characters would you like in your password? Choose between 8-128 characters");
 }
 
 // confirm() for uppercase letters
-var uppercaseLetters = window.confirm ("Would you like to choose uppercase letters?" )
-if (uppercaseLetters) {
-  window.prompt("You")
-  
-  
-}
-
+var uppercaseLetters = window.confirm ("Do you want to use uppercase letters?" )
 
 // confirm() for lowercase letters
-var lowercaseLetters = window.confirm ()
-if (lowercaseLetters) {
-
-}
-
+var lowercaseLetters = window.confirm ("Do you want to use lowercase letters?")
 
 // confirm() for special characters
-var specialCharacters = window.confirm ()
-if (specialCharacters) {
-
-}
-
+var specialCharacters = window.confirm ("Do you want to use special characters?")
 
 // confirm() for numeric characters
-var numericCharacters = window.confirm ()
-if (numericCharacters) {
+var numericCharacters = window.confirm ("Do you want to use numeric characters?")
 
+// if cancel for all password criteria, need to choose one
+if (uppercaseLetters === false && lowercaseLetters === false && specialCharacters === false && numericCharacters === false) {
+  window.alert("You must choose at least one password criteria");
+  var uppercaseLetters = window.confirm ("Do you want to use uppercase letters?" );
+  var lowercaseLetters = window.confirm ("Do you want to use lowercase letters?");
+  var specialCharacters = window.confirm ("Do you want to use special characters?");
+  var numericCharacters = window.confirm ("Do you want to use numeric characters?");
 }
+
 
 // once each confirm/prompt has been answered 
 // if confirms are true keep or get character type for the confirm
@@ -80,8 +76,29 @@ if (numericCharacters) {
 // if(isUppercase) {
 //   selectedCharacters.concat(uppercaseCharacters);
 // }
+
+if (uppercase) {
+  selectedCharacters.concat(uppercase);
+}
+
+if (lowercase) {
+  selectedCharacters.concat(lowercase);
+}
+
+if (special) {
+  selectedCharacters.concat(special);
+}
+
+if (numeric) {
+  selectedCharacters.concat(numeric)
+}
 // for loop based on password length prompt
 // use Math.floor(Math.random() * selectedCharacters.length) to get random index of selectedCharacters
 // return password text
+
+for (var i = 0; i < passwordLength; i++) {
+  = Math.floor(Math.random() * selectedCharacters.length)
+}
+
 
 
