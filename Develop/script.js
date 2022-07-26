@@ -20,10 +20,10 @@ function generatePassword() {
 };
 
 // variables holding the different characters
-var uppercase = ["A", "B", "C"]
-var lowercase = ["a", "b", "c"]
-var special = ["!", "@", "#"]
-var numeric = [1, 2, 3]
+var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var special = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~", "@"];
+var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 var selectedCharacters = []
 // i.e uppercase = ['A', 'B', 'C']
 // var selectedCharacters = []
@@ -36,13 +36,13 @@ var passwordLength = window.prompt("How many characters would you like in your p
 if (passwordLength < 8) {
   window.alert("Your password is not between 8-128 characters. Please try again");
   var passwordLength = window.prompt("How many characters would you like in your password? Choose between 8-128 characters");
-}
+};
 
 // if password length is greater than 128 stop function
 if (passwordLength > 128) {
   window.alert("Your password is not between 8-128 characters. Please try again");
   var passwordLength = window.prompt("How many characters would you like in your password? Choose between 8-128 characters");
-}
+};
 
 // confirm() for uppercase letters
 var uppercaseLetters = window.confirm ("Do you want to use uppercase letters?" )
@@ -63,7 +63,7 @@ if (uppercaseLetters === false && lowercaseLetters === false && specialCharacter
   var lowercaseLetters = window.confirm ("Do you want to use lowercase letters?");
   var specialCharacters = window.confirm ("Do you want to use special characters?");
   var numericCharacters = window.confirm ("Do you want to use numeric characters?");
-}
+};
 
 
 // once each confirm/prompt has been answered 
@@ -97,7 +97,7 @@ if (numeric) {
 // return password text
 
 for (var i = 0; i < passwordLength; i++) {
-  = Math.floor(Math.random() * selectedCharacters.length)
+ selectedCharacters = Math.floor(Math.random() * selectedCharacters.length)
 }
 
 
