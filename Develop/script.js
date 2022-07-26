@@ -14,36 +14,23 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-// declare function generatePassword()
-function generatePassword() {
-};
-
-// variables holding the different characters
+// global variable arrays holding the different characters
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var special = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~", "@"];
 var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 var selectedCharacters = []
-// i.e uppercase = ['A', 'B', 'C']
-// var selectedCharacters = []
 
-// I need to use prompt() to gather password criteria
-// var passwordLength = prompt("How many characters would you like in your password?")
+//user's choice of password length
 var passwordLength = window.prompt("How many characters would you like in your password? Choose between 8-128 characters");
 
-// if password length is less than 8 stop function
-if (passwordLength < 8) {
+// declare function generatePassword()
+function generatePassword() {
+  // if password length is less than 8 or greater than 128 stop function
+if (passwordLength < 8 || passwordLength > 128) {
   window.alert("Your password is not between 8-128 characters. Please try again");
   var passwordLength = window.prompt("How many characters would you like in your password? Choose between 8-128 characters");
 };
-
-// if password length is greater than 128 stop function
-if (passwordLength > 128) {
-  window.alert("Your password is not between 8-128 characters. Please try again");
-  var passwordLength = window.prompt("How many characters would you like in your password? Choose between 8-128 characters");
-};
-
 // confirm() for uppercase letters
 var uppercaseLetters = window.confirm ("Do you want to use uppercase letters?" )
 
@@ -64,6 +51,12 @@ if (uppercaseLetters === false && lowercaseLetters === false && specialCharacter
   var specialCharacters = window.confirm ("Do you want to use special characters?");
   var numericCharacters = window.confirm ("Do you want to use numeric characters?");
 };
+
+};
+
+
+
+
 
 
 // once each confirm/prompt has been answered 
